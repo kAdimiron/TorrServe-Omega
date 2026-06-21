@@ -1,4 +1,4 @@
-# TorrServe
+# TorrServe Omega
 
 Download torrent files.
 
@@ -7,6 +7,11 @@ Download torrent files.
      height="80">](https://f-droid.org/packages/ru.yourok.torrserve/)
 
 ![torrserve](https://user-images.githubusercontent.com/53379023/140739930-4c41670f-f807-4a81-9462-e4beae8474d3.png)
+
+Fork Changes:
+     1. Added SOCKS proxy settings in UI
+
+If you want use maximum profit of proxy (forwarding, TCP+UDP) use https://github.com/kAdimiron/TorrServer-Proxy
 
 Application for downloading torrents as `HTTP` files.
 **If your provider blocks torrents, be careful**.
