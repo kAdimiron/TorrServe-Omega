@@ -33,6 +33,7 @@ class TorrService : Service() {
     private val job = SupervisorJob()
     private val scope = CoroutineScope(Dispatchers.IO + job)
     private val serviceScope = CoroutineScope(EmptyCoroutineContext)
+    private var watchdogJob: kotlinx.coroutines.Job? = null
 
     override fun onBind(p0: Intent?): IBinder? = null
     override fun onCreate() {
@@ -91,15 +92,32 @@ class TorrService : Service() {
                 }
                 serverFile.run()
                 notification.doBindService(this@TorrService)
+                startWatchdog()
             }
 
             Utils.updateAtvCards()
         }
     }
 
+    private fun startWatchdog() {
+        watchdogJob?.cancel()
+        watchdogJob = scope.launch {
+            while (true) {
+                kotlinx.coroutines.delay(5000)
+                if (isLocal() && serverFile.exists()) {
+                    if (Api.echo().isEmpty()) {
+                        if (BuildConfig.DEBUG) Log.d("TorrService", "Watchdog: server is down, restarting...")
+                        serverFile.run()
+                    }
+                }
+            }
+        }
+    }
+
     private fun stopServer(forceClose: Boolean) {
         serviceScope.launch {
             if (BuildConfig.DEBUG) Log.d("TorrService", "stopServer(forceClose:$forceClose)")
+            watchdogJob?.cancel()
             if (isLocal() && Api.echo().isNotEmpty())
                 Api.shutdown()
             if (!isAccessibilityOn())
