@@ -2,7 +2,7 @@
 
 Download torrent files.
 
-![torrserve](https://user-images.githubusercontent.com/53379023/140739930-4c41670f-f807-4a81-9462-e4beae8474d3.png)
+![torrserve](https://repository-images.githubusercontent.com/1275944762/2adc9a79-8384-457e-9ac7-54e55307f019)
 
 Fork Changes:
 - Added SOCKS proxy settings in UI
