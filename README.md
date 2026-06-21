@@ -5,7 +5,8 @@ Download torrent files.
 ![torrserve](https://user-images.githubusercontent.com/53379023/140739930-4c41670f-f807-4a81-9462-e4beae8474d3.png)
 
 Fork Changes:
-     1. Added SOCKS proxy settings in UI
+- 1. Added SOCKS proxy settings in UI
+- 2. Added watchdog for TorrServer service
 
 If you want use maximum profit of proxy (forwarding, TCP+UDP) use https://github.com/kAdimiron/TorrServer-Proxy
 
