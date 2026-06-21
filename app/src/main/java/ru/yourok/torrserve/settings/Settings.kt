@@ -46,6 +46,13 @@ object Settings {
     fun getChooserAction(): Int = get("chooser_action", 0)
     fun setChooserAction(v: Int) = set("chooser_action", v)
 
+    fun getProxyType(): String = get("proxy_type", "")
+    fun getProxyMode(): String = get("proxy_mode", "tracker")
+    fun getProxyHost(): String = get("proxy_host", "")
+    fun getProxyPort(): String = get("proxy_port", "")
+    fun getProxyUser(): String = get("proxy_user", "")
+    fun getProxyPassword(): String = get("proxy_password", "")
+
     fun isAccessibilityOn(): Boolean = get("switch_accessibility", false)
     fun isBootStart(): Boolean = get("boot_start", false)
     fun isRootStart(): Boolean = get("root_start", false)

@@ -26,6 +26,24 @@ class ServerFile : File(App.context.filesDir, "torrserver") {
                 argsArr.add("--httpauth")
             if (Settings.isWebDAVStart())
                 argsArr.add("--webdav")
+
+            val proxyType = Settings.getProxyType()
+            if (proxyType.isNotBlank()) {
+                val host = Settings.getProxyHost()
+                val port = Settings.getProxyPort()
+                val user = Settings.getProxyUser()
+                val pass = Settings.getProxyPassword()
+                val mode = Settings.getProxyMode()
+
+                if (host.isNotBlank() && port.isNotBlank()) {
+                    var proxyUrl = "$proxyType://$host:$port"
+                    if (user.isNotBlank() && pass.isNotBlank())
+                        proxyUrl = "$proxyType://$user:$pass@$host:$port"
+                    argsArr.add("--proxyurl $proxyUrl")
+                    argsArr.add("--proxymode $mode")
+                }
+            }
+
             val args = argsArr.joinToString(" ")
 
             Shell.enableVerboseLogging = BuildConfig.DEBUG

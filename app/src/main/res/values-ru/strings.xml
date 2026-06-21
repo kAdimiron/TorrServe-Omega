@@ -243,4 +243,12 @@
     <string name="torrserver_log_summary">Просмотр журнала локального TorrServer</string>
     <string name="torrserver_log_cleared">Журнал TorrServer очищен</string>
     <string name="torrserver_log_trimmed">Лог обрезан (показаны последние %s)</string>
+
+    <string name="proxy_settings">Настройки прокси</string>
+    <string name="proxy_type">Тип прокси</string>
+    <string name="proxy_mode">Режим прокси</string>
+    <string name="proxy_host">Хост прокси</string>
+    <string name="proxy_port">Порт прокси</string>
+    <string name="proxy_user">Имя пользователя прокси</string>
+    <string name="proxy_password">Пароль прокси</string>
 </resources>

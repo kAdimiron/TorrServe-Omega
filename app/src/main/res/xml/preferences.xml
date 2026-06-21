@@ -39,6 +39,46 @@
         app:key="local_auth"
         app:title="@string/local_auth_title" />
 
+    <PreferenceCategory
+        style="@style/HeadPreferenceCategory"
+        android:key="proxy"
+        android:title="@string/proxy_settings" />
+
+    <ListPreference
+        android:defaultValue=""
+        app:entries="@array/proxy_type_entries"
+        app:entryValues="@array/proxy_type_values"
+        app:key="proxy_type"
+        app:title="@string/proxy_type" />
+
+    <ListPreference
+        android:defaultValue="tracker"
+        app:entries="@array/proxy_mode_entries"
+        app:entryValues="@array/proxy_mode_values"
+        app:key="proxy_mode"
+        app:title="@string/proxy_mode"
+        app:dependency="proxy_type" />
+
+    <EditTextPreference
+        app:key="proxy_host"
+        app:title="@string/proxy_host"
+        app:dependency="proxy_type" />
+
+    <EditTextPreference
+        app:key="proxy_port"
+        app:title="@string/proxy_port"
+        app:dependency="proxy_type" />
+
+    <EditTextPreference
+        app:key="proxy_user"
+        app:title="@string/proxy_user"
+        app:dependency="proxy_type" />
+
+    <EditTextPreference
+        app:key="proxy_password"
+        app:title="@string/proxy_password"
+        app:dependency="proxy_type" />
+
 
     <SwitchPreferenceCompat
         android:defaultValue="false"

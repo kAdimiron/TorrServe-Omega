@@ -301,4 +301,33 @@
     <string name="torrserver_log_cleared">TorrServer journal cleared</string>
     <string name="torrserver_log_trimmed">Log content trimmed (showing last %s)</string>
 
+    <string name="proxy_settings">Proxy Settings</string>
+    <string name="proxy_type">Proxy Type</string>
+    <string name="proxy_host">Proxy Host</string>
+    <string name="proxy_port">Proxy Port</string>
+    <string name="proxy_user">Proxy Username</string>
+    <string name="proxy_password">Proxy Password</string>
+    <string name="proxy_mode">Proxy Mode</string>
+    <string-array name="proxy_type_entries">
+        <item>None</item>
+        <item>HTTP</item>
+        <item>SOCKS5</item>
+        <item>SOCKS5 (DNS)</item>
+    </string-array>
+    <string-array name="proxy_type_values" translatable="false">
+        <item></item>
+        <item>http</item>
+        <item>socks5</item>
+        <item>socks5h</item>
+    </string-array>
+    <string-array name="proxy_mode_entries">
+        <item>Tracker</item>
+        <item>Peers</item>
+        <item>Full</item>
+    </string-array>
+    <string-array name="proxy_mode_values" translatable="false">
+        <item>tracker</item>
+        <item>peers</item>
+        <item>full</item>
+    </string-array>
 </resources>
